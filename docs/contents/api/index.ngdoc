@@ -1,0 +1,14 @@
+@ngdoc overview
+@name API Reference
+@description
+
+# ng.cork.ui.keys API Reference
+
+> Welcome to the **ng.cork.ui.keys** API reference.
+
+If you want to know how **ng.cork.ui.keys** works, checkout the {@link guide/ guide} and the {@link demos/ demos}.
+
+
+## Modules
+
+- **[ng.cork.ui.keys](#/api/ng.cork.ui.keys)** - Provides a service for normalizing keys in keyboard events.
