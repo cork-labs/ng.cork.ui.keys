@@ -1,5 +1,5 @@
 /**
- * ng.cork.ui.keys - v0.0.5 - 2015-04-09
+ * ng.cork.ui.keys - v0.0.6 - 2015-04-16
  * https://github.com/cork-labs/ng.cork.ui.keys
  *
  * Copyright (c) 2015 Cork Labs <http://cork-labs.org>
@@ -87,13 +87,13 @@
     /**
      * @var {object} browser
      */
-    var browserMaps = {
+    var browserModifiers = {
         ie: {
+            translate: function (code) {
+                return code;
+            },
             map: {
 
-            },
-            filter: function (code) {
-                return code;
             }
         },
         opera: {
@@ -207,21 +207,22 @@
                     var browserId;
 
                     /**
-                     * @var {object} shortcut for the current browser map/filter functions
+                     * @var {object} shortcut for the current browser modifiers
                      */
-                    var browserMap = browserMaps[browserId];
+                    var browserModifier = browserModifiers[browserId];
 
                     /**
                      * @param {number} code
                      * @returns {number} code
                      */
                     function map(code) {
-                        if ('function' === typeof browserMap.filter) {
-                            code = browserMap.filter(code);
+                        if ('function' === typeof browserModifier.translate) {
+                            code = browserModifier.translate(code);
                         }
-                        if (browserMap.amp[code]) {
-
+                        if (browserModifier.map[code]) {
+                            code = browserModifier.map[code](code);
                         }
+                        return code;
                     }
 
                     // -- public API
@@ -246,7 +247,7 @@
                          */
                         getCode: function (ev) {
                             var keyCode = ev.charCode ? ev.charCode : ev.keyCode;
-                            if (browserMap) {
+                            if (browserModifier) {
                                 keyCode = map(keyCode);
                             }
                             return keyCode;
