@@ -151,7 +151,7 @@
             var provider = this;
 
             /**
-             * @type {Object} provider configuration, allows extending the existing tags, or creating new ones
+             * @type {Object} service configuration, allows extending the existing tags, or creating new ones
              */
             var serviceConfig = {
                 tags: tags
