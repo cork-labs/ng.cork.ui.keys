@@ -1,5 +1,5 @@
 /**
- * ng.cork.ui.keys - v0.0.6 - 2015-04-16
+ * ng.cork.ui.keys - v0.0.7 - 2015-05-11
  * https://github.com/cork-labs/ng.cork.ui.keys
  *
  * Copyright (c) 2015 Cork Labs <http://cork-labs.org>
@@ -158,7 +158,7 @@
             var provider = this;
 
             /**
-             * @type {Object} provider configuration, allows extending the existing tags, or creating new ones
+             * @type {Object} service configuration, allows extending the existing tags, or creating new ones
              */
             var serviceConfig = {
                 tags: tags
